@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		D67B5EFE2C904457001A4287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B5EFD2C904457001A4287 /* AppDelegate.swift */; };
 		D67B5F002C904457001A4287 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B5EFF2C904457001A4287 /* SceneDelegate.swift */; };
-		D67B5F022C904457001A4287 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B5F012C904457001A4287 /* ViewController.swift */; };
-		D67B5F052C904457001A4287 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D67B5F042C904457001A4287 /* Base */; };
 		D67B5F072C904458001A4287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67B5F062C904458001A4287 /* Assets.xcassets */; };
 		D67B5F0A2C904458001A4287 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D67B5F092C904458001A4287 /* Base */; };
 		D67B5F152C904458001A4287 /* DragonBallKeepCodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B5F142C904458001A4287 /* DragonBallKeepCodingTests.swift */; };
 		D67B5F1F2C904458001A4287 /* DragonBallKeepCodingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B5F1E2C904458001A4287 /* DragonBallKeepCodingUITests.swift */; };
 		D67B5F212C904458001A4287 /* DragonBallKeepCodingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B5F202C904458001A4287 /* DragonBallKeepCodingUITestsLaunchTests.swift */; };
+		D699413A2C92086300C1F377 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69941382C92086300C1F377 /* ViewController.swift */; };
+		D699413B2C92086300C1F377 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69941392C92086300C1F377 /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,6 @@
 		D67B5EFA2C904457001A4287 /* DragonBallKeepCoding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonBallKeepCoding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67B5EFD2C904457001A4287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67B5EFF2C904457001A4287 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D67B5F012C904457001A4287 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D67B5F042C904457001A4287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D67B5F062C904458001A4287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D67B5F092C904458001A4287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D67B5F0B2C904458001A4287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +47,8 @@
 		D67B5F1A2C904458001A4287 /* DragonBallKeepCodingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragonBallKeepCodingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67B5F1E2C904458001A4287 /* DragonBallKeepCodingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallKeepCodingUITests.swift; sourceTree = "<group>"; };
 		D67B5F202C904458001A4287 /* DragonBallKeepCodingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallKeepCodingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D69941382C92086300C1F377 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D69941392C92086300C1F377 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +99,10 @@
 		D67B5EFC2C904457001A4287 /* DragonBallKeepCoding */ = {
 			isa = PBXGroup;
 			children = (
+				D699413F2C9209EF00C1F377 /* Models */,
+				D699413C2C9209C800C1F377 /* Presentation */,
 				D67B5EFD2C904457001A4287 /* AppDelegate.swift */,
 				D67B5EFF2C904457001A4287 /* SceneDelegate.swift */,
-				D67B5F012C904457001A4287 /* ViewController.swift */,
-				D67B5F032C904457001A4287 /* Main.storyboard */,
 				D67B5F062C904458001A4287 /* Assets.xcassets */,
 				D67B5F082C904458001A4287 /* LaunchScreen.storyboard */,
 				D67B5F0B2C904458001A4287 /* Info.plist */,
@@ -125,6 +125,38 @@
 				D67B5F202C904458001A4287 /* DragonBallKeepCodingUITestsLaunchTests.swift */,
 			);
 			path = DragonBallKeepCodingUITests;
+			sourceTree = "<group>";
+		};
+		D699413C2C9209C800C1F377 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D699413D2C9209D300C1F377 /* View */,
+				D699413E2C9209E000C1F377 /* Controller */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D699413D2C9209D300C1F377 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D69941392C92086300C1F377 /* ViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D699413E2C9209E000C1F377 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D69941382C92086300C1F377 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D699413F2C9209EF00C1F377 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D67B5F072C904458001A4287 /* Assets.xcassets in Resources */,
+				D699413B2C92086300C1F377 /* ViewController.xib in Resources */,
 				D67B5F0A2C904458001A4287 /* Base in Resources */,
-				D67B5F052C904457001A4287 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D67B5F022C904457001A4287 /* ViewController.swift in Sources */,
+				D699413A2C92086300C1F377 /* ViewController.swift in Sources */,
 				D67B5EFE2C904457001A4287 /* AppDelegate.swift in Sources */,
 				D67B5F002C904457001A4287 /* SceneDelegate.swift in Sources */,
 			);
@@ -297,14 +329,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D67B5F032C904457001A4287 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D67B5F042C904457001A4287 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D67B5F082C904458001A4287 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,7 +471,6 @@
 				INFOPLIST_FILE = DragonBallKeepCoding/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,7 +498,6 @@
 				INFOPLIST_FILE = DragonBallKeepCoding/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
