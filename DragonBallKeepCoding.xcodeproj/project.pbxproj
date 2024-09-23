@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D606F08D2CA172F9006D7EAF /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606F08C2CA172F9006D7EAF /* NetworkModel.swift */; };
+		D606F08F2CA17373006D7EAF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606F08E2CA17373006D7EAF /* APIClient.swift */; };
+		D65B9B572C97293400CF1B38 /* CharactersTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65B9B562C97293400CF1B38 /* CharactersTableViewController.xib */; };
+		D65B9B582C97293400CF1B38 /* CharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65B9B552C97293400CF1B38 /* CharactersTableViewController.swift */; };
 		D67B5EFE2C904457001A4287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B5EFD2C904457001A4287 /* AppDelegate.swift */; };
 		D67B5F002C904457001A4287 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B5EFF2C904457001A4287 /* SceneDelegate.swift */; };
 		D67B5F072C904458001A4287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67B5F062C904458001A4287 /* Assets.xcassets */; };
@@ -14,8 +18,8 @@
 		D67B5F152C904458001A4287 /* DragonBallKeepCodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B5F142C904458001A4287 /* DragonBallKeepCodingTests.swift */; };
 		D67B5F1F2C904458001A4287 /* DragonBallKeepCodingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B5F1E2C904458001A4287 /* DragonBallKeepCodingUITests.swift */; };
 		D67B5F212C904458001A4287 /* DragonBallKeepCodingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B5F202C904458001A4287 /* DragonBallKeepCodingUITestsLaunchTests.swift */; };
-		D699413A2C92086300C1F377 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69941382C92086300C1F377 /* ViewController.swift */; };
-		D699413B2C92086300C1F377 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69941392C92086300C1F377 /* ViewController.xib */; };
+		D699413A2C92086300C1F377 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69941382C92086300C1F377 /* LoginViewController.swift */; };
+		D699413B2C92086300C1F377 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69941392C92086300C1F377 /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D606F08C2CA172F9006D7EAF /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		D606F08E2CA17373006D7EAF /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		D65B9B552C97293400CF1B38 /* CharactersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewController.swift; sourceTree = "<group>"; };
+		D65B9B562C97293400CF1B38 /* CharactersTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersTableViewController.xib; sourceTree = "<group>"; };
 		D67B5EFA2C904457001A4287 /* DragonBallKeepCoding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonBallKeepCoding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67B5EFD2C904457001A4287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67B5EFF2C904457001A4287 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,8 +55,8 @@
 		D67B5F1A2C904458001A4287 /* DragonBallKeepCodingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragonBallKeepCodingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67B5F1E2C904458001A4287 /* DragonBallKeepCodingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallKeepCodingUITests.swift; sourceTree = "<group>"; };
 		D67B5F202C904458001A4287 /* DragonBallKeepCodingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallKeepCodingUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D69941382C92086300C1F377 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D69941392C92086300C1F377 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		D69941382C92086300C1F377 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D69941392C92086300C1F377 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +147,8 @@
 		D699413D2C9209D300C1F377 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D69941392C92086300C1F377 /* ViewController.xib */,
+				D69941392C92086300C1F377 /* LoginViewController.xib */,
+				D65B9B562C97293400CF1B38 /* CharactersTableViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,7 +156,8 @@
 		D699413E2C9209E000C1F377 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D69941382C92086300C1F377 /* ViewController.swift */,
+				D65B9B552C97293400CF1B38 /* CharactersTableViewController.swift */,
+				D69941382C92086300C1F377 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -155,6 +165,8 @@
 		D699413F2C9209EF00C1F377 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D606F08C2CA172F9006D7EAF /* NetworkModel.swift */,
+				D606F08E2CA17373006D7EAF /* APIClient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,8 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D67B5F072C904458001A4287 /* Assets.xcassets in Resources */,
-				D699413B2C92086300C1F377 /* ViewController.xib in Resources */,
+				D699413B2C92086300C1F377 /* LoginViewController.xib in Resources */,
 				D67B5F0A2C904458001A4287 /* Base in Resources */,
+				D65B9B572C97293400CF1B38 /* CharactersTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,9 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D699413A2C92086300C1F377 /* ViewController.swift in Sources */,
+				D699413A2C92086300C1F377 /* LoginViewController.swift in Sources */,
+				D65B9B582C97293400CF1B38 /* CharactersTableViewController.swift in Sources */,
 				D67B5EFE2C904457001A4287 /* AppDelegate.swift in Sources */,
+				D606F08D2CA172F9006D7EAF /* NetworkModel.swift in Sources */,
 				D67B5F002C904457001A4287 /* SceneDelegate.swift in Sources */,
+				D606F08F2CA17373006D7EAF /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
