@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		D606F08D2CA172F9006D7EAF /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606F08C2CA172F9006D7EAF /* NetworkModel.swift */; };
 		D606F08F2CA17373006D7EAF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606F08E2CA17373006D7EAF /* APIClient.swift */; };
+		D606F0912CA1740E006D7EAF /* DBCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606F0902CA1740E006D7EAF /* DBCharacter.swift */; };
+		D606F0952CA1EC04006D7EAF /* CharacterTransformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606F0942CA1EC04006D7EAF /* CharacterTransformations.swift */; };
+		D606F0982CA1F463006D7EAF /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606F0962CA1F463006D7EAF /* CharactersTableViewCell.swift */; };
+		D606F0992CA1F463006D7EAF /* CharactersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D606F0972CA1F463006D7EAF /* CharactersTableViewCell.xib */; };
 		D65B9B572C97293400CF1B38 /* CharactersTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65B9B562C97293400CF1B38 /* CharactersTableViewController.xib */; };
 		D65B9B582C97293400CF1B38 /* CharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65B9B552C97293400CF1B38 /* CharactersTableViewController.swift */; };
 		D67B5EFE2C904457001A4287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B5EFD2C904457001A4287 /* AppDelegate.swift */; };
@@ -42,6 +46,10 @@
 /* Begin PBXFileReference section */
 		D606F08C2CA172F9006D7EAF /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		D606F08E2CA17373006D7EAF /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		D606F0902CA1740E006D7EAF /* DBCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCharacter.swift; sourceTree = "<group>"; };
+		D606F0942CA1EC04006D7EAF /* CharacterTransformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTransformations.swift; sourceTree = "<group>"; };
+		D606F0962CA1F463006D7EAF /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
+		D606F0972CA1F463006D7EAF /* CharactersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersTableViewCell.xib; sourceTree = "<group>"; };
 		D65B9B552C97293400CF1B38 /* CharactersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewController.swift; sourceTree = "<group>"; };
 		D65B9B562C97293400CF1B38 /* CharactersTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersTableViewController.xib; sourceTree = "<group>"; };
 		D67B5EFA2C904457001A4287 /* DragonBallKeepCoding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonBallKeepCoding.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +157,8 @@
 			children = (
 				D69941392C92086300C1F377 /* LoginViewController.xib */,
 				D65B9B562C97293400CF1B38 /* CharactersTableViewController.xib */,
+				D606F0962CA1F463006D7EAF /* CharactersTableViewCell.swift */,
+				D606F0972CA1F463006D7EAF /* CharactersTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +177,8 @@
 			children = (
 				D606F08C2CA172F9006D7EAF /* NetworkModel.swift */,
 				D606F08E2CA17373006D7EAF /* APIClient.swift */,
+				D606F0902CA1740E006D7EAF /* DBCharacter.swift */,
+				D606F0942CA1EC04006D7EAF /* CharacterTransformations.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +291,7 @@
 				D699413B2C92086300C1F377 /* LoginViewController.xib in Resources */,
 				D67B5F0A2C904458001A4287 /* Base in Resources */,
 				D65B9B572C97293400CF1B38 /* CharactersTableViewController.xib in Resources */,
+				D606F0992CA1F463006D7EAF /* CharactersTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,10 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D606F0952CA1EC04006D7EAF /* CharacterTransformations.swift in Sources */,
 				D699413A2C92086300C1F377 /* LoginViewController.swift in Sources */,
 				D65B9B582C97293400CF1B38 /* CharactersTableViewController.swift in Sources */,
+				D606F0982CA1F463006D7EAF /* CharactersTableViewCell.swift in Sources */,
 				D67B5EFE2C904457001A4287 /* AppDelegate.swift in Sources */,
 				D606F08D2CA172F9006D7EAF /* NetworkModel.swift in Sources */,
+				D606F0912CA1740E006D7EAF /* DBCharacter.swift in Sources */,
 				D67B5F002C904457001A4287 /* SceneDelegate.swift in Sources */,
 				D606F08F2CA17373006D7EAF /* APIClient.swift in Sources */,
 			);

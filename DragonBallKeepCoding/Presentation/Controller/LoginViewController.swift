@@ -23,8 +23,6 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        
-        
         let username = usernameTextField.text
         let password = passwordTextField.text
 
@@ -33,16 +31,30 @@ final class LoginViewController: UIViewController {
             return
         }
         
-        
-        
-        
         print("username: \(getUsername)")
         print("password: \(getPassword)")
         
-        if(getUsername == loginUsername && getPassword == loginPassword){
-            let charactersTableViewController = CharactersTableViewController()
-            navigationController?.setViewControllers([charactersTableViewController], animated: true)
-        }
-        
+        NetworkModel.shared.loginRequest(getUsername,getPassword,completion : { result in
+            switch result {
+                case let .success(token):
+                    self.onLoginSuccess(token)
+                case let .failure(error):
+                    self.onLoginError(error)
+            }
+        })
     }
+    
+    func onLoginSuccess (_ token: String) {
+        NetworkModel.shared.setToken(token)
+        
+        DispatchQueue.main.async{
+            let charactersTableViewController = CharactersTableViewController()
+            self.navigationController?.setViewControllers([charactersTableViewController], animated: true)
+        }
+    }
+    
+    func onLoginError (_ error: DBError) {
+        print("An error has occured: \(error)")
+    }
+
 }
