@@ -12,7 +12,16 @@ struct DBCharacter: Codable, Hashable {
     let photo: String
     let id: String
     let description: String
-    let favorite: Bool
+    let favorite: Bool?
+    let hero: Dictionary<String,String>?
+    
+    
+    func isTransformation() -> Bool{
+        guard let hasHero = hero else {
+            return false
+        }
+        return !hasHero.isEmpty
+    }
 }
 
 // Este es un ejemplo de como usar Coding Keys
@@ -22,7 +31,8 @@ struct CustomCodableCharacter: Codable {
     let fotoURL: String
     let id: String
     let descripcion: String
-    let favorito: Bool
+    let favorito: Bool?
+    let hero: Dictionary<String,String>?
 }
 
 extension CustomCodableCharacter {
@@ -32,5 +42,6 @@ extension CustomCodableCharacter {
         case id = "id"
         case descripcion = "description"
         case favorito = "favorite"
+        case hero = "hero"
     }
 }

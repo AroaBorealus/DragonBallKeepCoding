@@ -47,8 +47,26 @@ final class LoginViewController: UIViewController {
     func onLoginSuccess (_ token: String) {
         NetworkModel.shared.setToken(token)
         
+        NetworkModel.shared.getAllCharacters("",
+            completion: {
+                result in
+                switch result {
+                    case let .success(characters):
+                    self.onCharacterRequestSuccess(characters)
+                    case let .failure(error):
+                        print(error)
+                }
+            }
+        )
+    }
+    
+    func onCharacterRequestSuccess (_ characters: [DBCharacter]){
+        print(characters)
+        CharactersModel.shared.setCharacterList(characters)
+    
         DispatchQueue.main.async{
-            let charactersTableViewController = CharactersTableViewController()
+            let charactersTableViewController = CharactersTableViewController(nil)
+            self.navigationController?.title = "MEUMEU"
             self.navigationController?.setViewControllers([charactersTableViewController], animated: true)
         }
     }

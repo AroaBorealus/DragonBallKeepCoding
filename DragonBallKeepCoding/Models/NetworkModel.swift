@@ -94,7 +94,7 @@ final class NetworkModel {
     
     
     func getTransformations(_ characterId: String,
-        completion: @escaping (Result<[CharacterTransformations], DBError>) -> Void
+        completion: @escaping (Result<[DBCharacter], DBError>) -> Void
     ) {
         // Vamos a crear nuestra url request
         var components = baseComponents
@@ -122,6 +122,6 @@ final class NetworkModel {
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         urlRequest.httpBody = jsonData
 
-        client.requestCharacters([CharacterTransformations].self, from: urlRequest, completion: completion)
+        client.requestCharacters([DBCharacter].self, from: urlRequest, completion: completion)
     }
 }
