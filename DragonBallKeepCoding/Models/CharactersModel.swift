@@ -10,7 +10,7 @@ import Foundation
 final class CharactersModel {
     static let shared = CharactersModel()
     
-    private var characterList: [DBCharacter]
+    var characterList: [DBCharacter]
     
     init() { self.characterList = [] }
     

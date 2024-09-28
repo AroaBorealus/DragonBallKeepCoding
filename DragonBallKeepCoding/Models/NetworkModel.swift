@@ -44,9 +44,15 @@ final class NetworkModel {
             return
         }
         
+        if (username.isEmpty || password.isEmpty){
+            completion(.failure(.noData))
+            return
+        }
+        
+        
         let loginString = String(format: "%@:%@", username, password)
         guard let loginData = loginString.data(using: .utf8) else {
-            completion(.failure(.noData))
+            completion(.failure(.encryptionError))
             return
         }
         let base64LoginString = loginData.base64EncodedString()

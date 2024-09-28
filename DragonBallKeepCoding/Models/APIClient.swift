@@ -14,6 +14,7 @@ enum DBError: Error, Equatable {
     case statusCode(code: Int?)
     case unauthorized
     case missingToken
+    case encryptionError
     case unknown
 }
 
