@@ -87,7 +87,32 @@ final class CharactersTableViewController: UITableViewController {
         
         var snapshot = Snapshot()
         snapshot.appendSections([0])
-        snapshot.appendItems(unpackedTransformations.sorted{$0.name < $1.name} )
+        snapshot.appendItems(unpackedTransformations.sorted{
+            let name0Arr = $0.name.components(separatedBy: ".")
+            let name1Arr = $1.name.components(separatedBy: ".")
+            
+            guard let num0Str = name0Arr.first else
+            {
+                return $0.name < $1.name
+            }
+            
+            guard let num1Str = name1Arr.first else
+            {
+                return $0.name < $1.name
+            }
+            
+            guard let int0 = Int(num0Str) else
+            {
+                return $0.name < $1.name
+            }
+            
+            guard let int1 = Int(num1Str) else
+            {
+                return $0.name < $1.name
+            }
+            
+            return int0 < int1
+        } )
         self.dataSource?.apply(snapshot)
     }
     
