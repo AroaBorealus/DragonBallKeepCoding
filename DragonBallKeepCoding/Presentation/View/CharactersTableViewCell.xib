@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,23 +18,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Mxt-GN-gN5">
-                        <rect key="frame" x="16" y="16" width="304" height="64"/>
+                        <rect key="frame" x="2" y="2" width="332" height="88"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q6R-yp-nxe">
-                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="137" height="88"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="0yl-f2-0y4"/>
-                                    <constraint firstAttribute="height" constant="64" id="MRC-xL-0Cn"/>
+                                    <constraint firstAttribute="width" secondItem="q6R-yp-nxe" secondAttribute="height" multiplier="14:9" id="d8g-uN-8Zq"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rft-ai-mgd">
-                                <rect key="frame" x="80" y="22" width="164" height="20.333333333333329"/>
+                                <rect key="frame" x="153" y="34" width="119" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:HjY-5d-uRo:image" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HjY-5d-uRo">
-                                <rect key="frame" x="260" y="9.6666666666666679" width="44" height="43.666666666666657"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:HjY-5d-uRo:image" translatesAutoresizingMaskIntoConstraints="NO" id="HjY-5d-uRo">
+                                <rect key="frame" x="288" y="22" width="44" height="44"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Exs-OK-axi"/>
@@ -42,13 +41,18 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="q6R-yp-nxe" firstAttribute="top" secondItem="Mxt-GN-gN5" secondAttribute="top" id="JMt-eM-NRJ"/>
+                            <constraint firstItem="q6R-yp-nxe" firstAttribute="bottom" secondItem="Mxt-GN-gN5" secondAttribute="bottom" id="Usj-s0-Z72"/>
+                            <constraint firstItem="q6R-yp-nxe" firstAttribute="leading" secondItem="Mxt-GN-gN5" secondAttribute="leading" id="odK-e2-JLi"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Mxt-GN-gN5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="7KF-TS-MrU"/>
-                    <constraint firstAttribute="bottom" secondItem="Mxt-GN-gN5" secondAttribute="bottom" constant="16" id="G6q-dB-V6F"/>
-                    <constraint firstAttribute="trailing" secondItem="Mxt-GN-gN5" secondAttribute="trailing" constant="16" id="dFe-TQ-dKB"/>
-                    <constraint firstItem="Mxt-GN-gN5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="f4t-ul-Xvg"/>
+                    <constraint firstItem="Mxt-GN-gN5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="7KF-TS-MrU"/>
+                    <constraint firstItem="Mxt-GN-gN5" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" constant="-2" id="G6q-dB-V6F"/>
+                    <constraint firstItem="Mxt-GN-gN5" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-2" id="dFe-TQ-dKB"/>
+                    <constraint firstItem="Mxt-GN-gN5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="f4t-ul-Xvg"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -61,7 +65,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="imageView:HjY-5d-uRo:image" catalog="system" width="128" height="116">
+        <image name="imageView:HjY-5d-uRo:image" width="128" height="116">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
 S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBELDBscIRkmKywzNjlDS0xQU1UkbnVsbNcNDg8QERITFBUW

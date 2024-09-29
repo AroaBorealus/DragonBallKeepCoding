@@ -20,13 +20,12 @@ final class NetworkModelTests: XCTestCase {
     }
     
     
-    func test_getAllCharacters_success() {
+    func test_getCharacters_success() {
         //Given
         let expectedResult = Result<[DBCharacter], DBError>.success([])
         mock.recievedResultCharacters = expectedResult
         sut.setToken("Lorem Ipsum")
         var recievedResult: Result<[DBCharacter], DBError>?
-        
         
         var components = URLComponents()
         components.scheme = "https"
@@ -43,7 +42,7 @@ final class NetworkModelTests: XCTestCase {
         urlRequest.httpBody = jsonData
         
         //When
-        sut.getAllCharacters("", completion: { result in
+        sut.getCharacters("", completion: { result in
             recievedResult = result
         })
         
@@ -54,11 +53,11 @@ final class NetworkModelTests: XCTestCase {
         XCTAssertFalse(mock.didCallRequestLogin)
     }
     
-    func test_getAllCharacters_missingToken() {
+    func test_getCharacters_missingToken() {
         let expectedResult = Result<[DBCharacter], DBError>.failure(DBError.missingToken)
         var recievedResult: Result<[DBCharacter], DBError>?
         //When
-        sut.getAllCharacters("", completion: { result in
+        sut.getCharacters("", completion: { result in
             recievedResult = result
         })
         
@@ -70,36 +69,41 @@ final class NetworkModelTests: XCTestCase {
     }
     
     func test_loginRequest_success() {
+        //Given
         let expectedResult = Result<String, DBError>.success("gvctfxc")
         mock.recievedResultLogin = expectedResult
         var recievedResult: Result<String, DBError>?
         
-        
+        //When
         sut.loginRequest("somemail@gmail.com", "Qwerty1", completion: { result in
             recievedResult = result
         })
         
+        //Then
         XCTAssertEqual(recievedResult, expectedResult)
         XCTAssertTrue(mock.didCallRequestLogin)
         XCTAssertFalse(mock.didCallRequestCharacters)
     }
     
     func test_loginRequest_fail() {
+        //Given
         let expectedResult = Result<String, DBError>.failure(DBError.noData)
         mock.recievedResultLogin = expectedResult
         var recievedResult: Result<String, DBError>?
         
-        
+        //When
         sut.loginRequest("", "", completion: { result in
             recievedResult = result
         })
         
+        //Then
         XCTAssertEqual(recievedResult, expectedResult)
         XCTAssertFalse(mock.didCallRequestLogin)
         XCTAssertFalse(mock.didCallRequestCharacters)
     }
     
     func test_getTransformations_success() {
+        //Given
         let expectedResult = Result<[DBCharacter], DBError>.success([])
         mock.recievedResultCharacters = expectedResult
         var recievedResult: Result<[DBCharacter], DBError>?
@@ -120,11 +124,12 @@ final class NetworkModelTests: XCTestCase {
         let jsonData = try! JSONSerialization.data(withJSONObject: json)
         urlRequest.httpBody = jsonData
         
-        
+        //When
         sut.getTransformations(requestedCharacterId, completion: { result in
             recievedResult = result
         })
         
+        //Then
         XCTAssertEqual(expectedResult, recievedResult)
         XCTAssertEqual(urlRequest, mock.recievedRequest)
         XCTAssertTrue(mock.didCallRequestCharacters)
@@ -132,20 +137,21 @@ final class NetworkModelTests: XCTestCase {
     }
     
     func test_getTransformations_failure() {
+        //Given
         let expectedResult = Result<[DBCharacter], DBError>.failure(DBError.unknown)
         mock.recievedResultCharacters = expectedResult
         var recievedResult: Result<[DBCharacter], DBError>?
         sut.setToken("Lorem Ipsum")
         let requestedCharacterId = "1234"
         
-        
+        //When
         sut.getTransformations(requestedCharacterId, completion: { result in
             recievedResult = result
         })
         
+        //Then
         XCTAssertEqual(expectedResult, recievedResult)
         XCTAssertTrue(mock.didCallRequestCharacters)
         XCTAssertFalse(mock.didCallRequestLogin)
     }
-    
 }

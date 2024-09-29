@@ -18,7 +18,6 @@ final class CharactersTableViewController: UITableViewController {
     private var dataSource: DataSource?
     private var transformations: [DBCharacter]?
     
-    
     // MARK: - Components
     private var activityIndicator: UIActivityIndicatorView {
         let spinner = UIActivityIndicatorView(style: .large)
@@ -33,8 +32,6 @@ final class CharactersTableViewController: UITableViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    
-    
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -44,7 +41,6 @@ final class CharactersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //navigationController?.title = "Characters" no va
         tableView.backgroundView = activityIndicator
         
         tableView.register(
@@ -73,15 +69,41 @@ final class CharactersTableViewController: UITableViewController {
         
         tableView.dataSource = dataSource
         
-        var snapshot = Snapshot()
-        snapshot.appendSections([0])
-        guard let unpackedTransformations = transformations else {
-            snapshot.appendItems(charactersModel.getCharacters())
-            dataSource?.apply(snapshot)
+        
+        guard let unpackedTransformations = self.transformations else {
+            NetworkModel.shared.getCharacters("",
+                completion: {
+                    result in
+                    switch result {
+                        case let .success(characters):
+                            self.onCharacterRequestSuccess(characters)
+                        case let .failure(error):
+                            self.onCharacterRequestError(error)
+                    }
+                }
+            )
             return
         }
+        
+        var snapshot = Snapshot()
+        snapshot.appendSections([0])
         snapshot.appendItems(unpackedTransformations.sorted{$0.name < $1.name} )
-        dataSource?.apply(snapshot)
+        self.dataSource?.apply(snapshot)
+    }
+    
+    func onCharacterRequestError(_ error: DBError) {
+        print("An error has occurred: \(error)")
+    }
+    
+    func onCharacterRequestSuccess (_ characters: [DBCharacter]){
+        CharactersModel.shared.setCharacterList(characters)
+    
+        DispatchQueue.main.async{
+            var snapshot = Snapshot()
+            snapshot.appendSections([0])
+            snapshot.appendItems(self.charactersModel.getCharacters())
+            self.dataSource?.apply(snapshot)
+        }
     }
 }
 
@@ -106,13 +128,13 @@ extension CharactersTableViewController {
         }
         
         if let unpackedTransformations = transformations {
-            guard let transformationFound = unpackedTransformations.first(where: { $0.name == foundCell.getCharacterName() }) else {
+            guard let transformationFound = unpackedTransformations.first(where: { $0.id == foundCell.getCharacterID() }) else {
                 return
             }
             elementFound = transformationFound
             
         } else {
-            guard let characterFound = CharactersModel.shared.getCharacterByName(foundCell.getCharacterName()) else {
+            guard let characterFound = CharactersModel.shared.getCharacterByID(foundCell.getCharacterID()) else {
                 return
             }
             elementFound = characterFound

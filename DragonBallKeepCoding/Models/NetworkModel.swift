@@ -65,8 +65,7 @@ final class NetworkModel {
         client.requestLogin(from: urlRequest, completion: completion)
     }
     
-    
-    func getAllCharacters(_ character: String,
+    func getCharacters(_ character: String,
         completion: @escaping (Result<[DBCharacter], DBError>) -> Void
     ) {
         // Vamos a crear nuestra url request
@@ -97,7 +96,6 @@ final class NetworkModel {
 
         client.requestCharacters([DBCharacter].self, from: urlRequest, completion: completion)
     }
-    
     
     func getTransformations(_ characterId: String,
         completion: @escaping (Result<[DBCharacter], DBError>) -> Void

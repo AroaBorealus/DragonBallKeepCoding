@@ -23,7 +23,6 @@ final class APIClientProtocolMock<C: Codable>: APIClientProtocol{
         }
     }
     
-    
     var didCallRequestCharacters: Bool = false
     var recievedResultCharacters: Result<C,DBError>?
     func requestCharacters<T>(_ type: T.Type, from request: URLRequest, completion: @escaping (Result<T, DBError>) -> Void) where T : Decodable {
@@ -34,6 +33,4 @@ final class APIClientProtocolMock<C: Codable>: APIClientProtocol{
             completion(result)
         }
     }
-    
-    
 }

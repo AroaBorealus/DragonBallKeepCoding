@@ -15,7 +15,6 @@ struct DBCharacter: Codable, Hashable {
     let favorite: Bool?
     let hero: Dictionary<String,String>?
     
-    
     func isTransformation() -> Bool{
         guard let hasHero = hero else {
             return false

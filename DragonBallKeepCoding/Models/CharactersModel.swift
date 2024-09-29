@@ -25,4 +25,8 @@ final class CharactersModel {
     func getCharacterByName(_ name: String) -> DBCharacter?{
         characterList.first(where: { $0.name == name })
     }
+    
+    func getCharacterByID(_ id: String) -> DBCharacter?{
+        characterList.first(where: { $0.id == id })
+    }
 }

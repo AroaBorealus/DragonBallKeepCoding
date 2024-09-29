@@ -9,37 +9,28 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
-    let loginUsername = "Aroa"
-    let loginPassword = "1234"
-
+    // MARK: - Outlets
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
-    
-
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        errorLabel.textColor = UIColor.white
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        let username = usernameTextField.text
-        let password = passwordTextField.text
-
-        guard let getUsername = username, let getPassword = password else {
-            print("username or password is missing")
+        guard let getUsername = usernameTextField.text, let getPassword = passwordTextField.text else {
             return
         }
-        
-        print("username: \(getUsername)")
-        print("password: \(getPassword)")
-        
-        NetworkModel.shared.loginRequest(getUsername,getPassword,completion : { result in
+                
+        NetworkModel.shared.loginRequest(getUsername,getPassword,completion : { [weak self] result in
             switch result {
                 case let .success(token):
-                    self.onLoginSuccess(token)
+                    self?.onLoginSuccess(token)
                 case let .failure(error):
-                    self.onLoginError(error)
+                    self?.onLoginError(error)
             }
         })
     }
@@ -47,32 +38,26 @@ final class LoginViewController: UIViewController {
     func onLoginSuccess (_ token: String) {
         NetworkModel.shared.setToken(token)
         
-        NetworkModel.shared.getAllCharacters("",
-            completion: {
-                result in
-                switch result {
-                    case let .success(characters):
-                    self.onCharacterRequestSuccess(characters)
-                    case let .failure(error):
-                        print(error)
-                }
-            }
-        )
-    }
-    
-    func onCharacterRequestSuccess (_ characters: [DBCharacter]){
-        print(characters)
-        CharactersModel.shared.setCharacterList(characters)
-    
         DispatchQueue.main.async{
             let charactersTableViewController = CharactersTableViewController(nil)
-            self.navigationController?.title = "MEUMEU"
+            self.navigationController?.title = "Characters"
             self.navigationController?.setViewControllers([charactersTableViewController], animated: true)
         }
     }
     
     func onLoginError (_ error: DBError) {
-        print("An error has occured: \(error)")
+        DispatchQueue.main.async {
+            self.errorLabel.textColor = UIColor.red
+            self.errorLabel.text = ""
+            
+            switch error {
+            case .noData:
+                self.errorLabel.text = "Username or Password missing"
+                break
+            case .decodingFailed, .malformedURL, .statusCode, .unauthorized, .missingToken, .encryptionError, .unknown:
+                self.errorLabel.text = "Incorrect Login"
+                break
+            }
+        }
     }
-
 }

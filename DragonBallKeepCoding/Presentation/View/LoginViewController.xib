@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
+                <outlet property="errorLabel" destination="wI2-Vk-vZs" id="9rF-JJ-Lgo"/>
                 <outlet property="passwordTextField" destination="6Lr-fN-BTx" id="Y9d-TD-Zb7"/>
                 <outlet property="usernameTextField" destination="nVj-zk-Mm4" id="Fy0-dX-uiI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -100,8 +101,8 @@
                                 <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="3Wu-db-qTr"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;!Miau&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wI2-Vk-vZs" userLabel="ErrorLabel">
-                            <rect key="frame" x="165.33333333333334" y="118.66666666666667" width="62.333333333333343" height="20.333333333333329"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;!ErrorLabel&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wI2-Vk-vZs" userLabel="ErrorLabel">
+                            <rect key="frame" x="144.33333333333334" y="118.66666666666667" width="104.33333333333334" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" systemColor="systemRedColor"/>
                             <nil key="highlightedColor"/>

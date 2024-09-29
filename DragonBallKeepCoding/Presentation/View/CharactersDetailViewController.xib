@@ -23,30 +23,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sQ2-uu-AyJ">
-                    <rect key="frame" x="0.0" y="59" width="393" height="300"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="300" id="H7u-15-PPU"/>
-                    </constraints>
+                    <rect key="frame" x="0.0" y="59" width="393" height="284"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkn-XP-BMP" userLabel="characterName">
-                    <rect key="frame" x="16" y="367" width="56" height="26.333333333333314"/>
+                    <rect key="frame" x="16" y="383" width="56" height="26.333333333333314"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVI-kt-4tu" userLabel="characterDescription">
-                    <rect key="frame" x="18" y="415" width="359" height="243"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="243" id="Gpn-RK-4H4"/>
-                    </constraints>
+                    <rect key="frame" x="18" y="404.33333333333326" width="359" height="323.66666666666674"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpK-X2-EPu" userLabel="btTransformations">
-                    <rect key="frame" x="122.66666666666669" y="690" width="148" height="35"/>
+                    <rect key="frame" x="122.66666666666669" y="758" width="148" height="45"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="35" id="gtS-ZO-TON"/>
+                        <constraint firstAttribute="height" constant="45" id="LtJ-Pj-fY1"/>
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Transformations"/>
@@ -58,13 +52,15 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="qpK-X2-EPu" firstAttribute="top" secondItem="RVI-kt-4tu" secondAttribute="bottom" constant="32" id="0bM-pQ-PBb"/>
-                <constraint firstItem="RVI-kt-4tu" firstAttribute="top" secondItem="kkn-XP-BMP" secondAttribute="bottom" constant="21.670000000000002" id="2QV-AI-Ace"/>
+                <constraint firstItem="qpK-X2-EPu" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-15" id="0bM-pQ-PBb"/>
+                <constraint firstItem="RVI-kt-4tu" firstAttribute="bottom" secondItem="qpK-X2-EPu" secondAttribute="top" constant="-30" id="2QV-AI-Ace"/>
                 <constraint firstItem="RVI-kt-4tu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="DjB-GB-NO3"/>
                 <constraint firstItem="kkn-XP-BMP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="H6V-cC-heM"/>
-                <constraint firstItem="kkn-XP-BMP" firstAttribute="top" secondItem="sQ2-uu-AyJ" secondAttribute="bottom" constant="8" id="UdH-uQ-9SA"/>
+                <constraint firstItem="kkn-XP-BMP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-30" id="LEN-8O-WaM"/>
+                <constraint firstItem="RVI-kt-4tu" firstAttribute="top" secondItem="kkn-XP-BMP" secondAttribute="bottom" constant="-5" id="UdH-uQ-9SA"/>
                 <constraint firstItem="sQ2-uu-AyJ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aEF-Xj-tLo"/>
                 <constraint firstItem="sQ2-uu-AyJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eVH-hF-lzY"/>
+                <constraint firstItem="sQ2-uu-AyJ" firstAttribute="bottom" secondItem="kkn-XP-BMP" secondAttribute="top" constant="-40" id="jvB-Ti-tNW"/>
                 <constraint firstItem="sQ2-uu-AyJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nve-SC-h1y"/>
                 <constraint firstItem="RVI-kt-4tu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-16" id="z9D-V8-a95"/>
                 <constraint firstItem="qpK-X2-EPu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zLQ-kS-3k0"/>
