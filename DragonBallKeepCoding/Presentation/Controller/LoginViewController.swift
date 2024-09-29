@@ -17,7 +17,7 @@ final class LoginViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        errorLabel.textColor = UIColor.white
+        errorLabel.text = ""
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
@@ -25,6 +25,7 @@ final class LoginViewController: UIViewController {
             return
         }
                 
+        errorLabel.text = ""
         NetworkModel.shared.loginRequest(getUsername,getPassword,completion : { [weak self] result in
             switch result {
                 case let .success(token):
